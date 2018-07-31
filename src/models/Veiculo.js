@@ -19,6 +19,10 @@ const schema = new Schema( {
 	model_id: {
 		type: Number,
 		required: true
+	},
+	license_plate: {
+		type: String,
+		required: true
 	}
 });
 

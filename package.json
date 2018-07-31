@@ -1,0 +1,15 @@
+{
+  "name": "NinjaAPI",
+  "version": "1.0",
+  "description": "API para comunicação com interface pronta",
+  "main": "index.js",
+  "author": "Yuri",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.6"
+  },
+  "scripts": {
+	  "start": "node .bin/server.js"
+  }
+}

@@ -18,6 +18,7 @@ exports.get = (req, res, next) => {
 		});
 };
 
+/*
 exports.getBySlug = (req, res, next) => {
 	Veiculo
         .findOne({
@@ -31,7 +32,7 @@ exports.getBySlug = (req, res, next) => {
 				.send(e);
         });
 };
-
+*/
 exports.getById = (req, res, next) => {
 	Veiculo
 		.findById(req.params.id)

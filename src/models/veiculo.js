@@ -13,24 +13,31 @@ const schema = new Schema({
 		required: true
 	},
 	brand_id: {
-		type: Number,
+		type: String,
 		required: true
 	},
-    slug: {
-        type: String,
-        required: [true, 'O slug é obrigatório'],
-        trim: true,
-        index: true, 
-        unique: true  
-    },
 	model_id: {
-		type: Number,
+		type: String,
 		required: true
 	},
 	license_plate: {
 		type: String,
-		required: true
+		required: true,
+		index: true,
+		unique: [true, 'License Plate already exists']
 	}
 });
 
 module.exports = mongoose.model('Veiculo', schema);
+
+/*
+
+    slug: {
+        type: String,
+        required: [true, 'O slug é obrigatório'],
+        trim: true,
+        index: true,
+        unique: true
+    },
+
+*/

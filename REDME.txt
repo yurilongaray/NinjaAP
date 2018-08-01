@@ -1,11 +1,11 @@
 https://mlab.com/home
 
-O que sua API deve fazer:
-Possibilitar a criação, edição, exclusão e obtenção de dados (listagem e individual) dos veículos cadastrados no front-end;
 
-Utilizar os métodos HTTP corretos para comunicação entre front-end e API de acordo com o padrão REST;
+- Possibilitar a criação, edição, exclusão e obtenção de dados (listagem e individual) dos veículos cadastrados no front-end;
 
-Validar a integridade e obrigatoriedade dos campos informados no cadastro, bem como não permitir a inserção de dois veículos com mesma placa.
+- Utilizar os métodos HTTP corretos para comunicação entre front-end e API de acordo com o padrão REST;
+
+- Validar a integridade e obrigatoriedade dos campos informados no cadastro, bem como não permitir a inserção de dois veículos com mesma placa.
 
 Configurando o ambiente
 Para executar corretamente a aplicação front-end, você deve:

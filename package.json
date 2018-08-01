@@ -1,15 +1,17 @@
 {
   "name": "NinjaAPI",
-  "version": "1.0",
-  "description": "API para comunicação com interface pronta",
+  "description": "",
   "main": "index.js",
   "author": "Yuri",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "debug": "^3.1.0",
     "express": "^4.16.3",
+    "http": "0.0.0",
     "mongoose": "^5.2.6"
   },
   "scripts": {
-	  "start": "node .bin/server.js"
+    "start": "node ./bin/server.js"
   }
 }

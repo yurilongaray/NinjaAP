@@ -18,6 +18,20 @@ exports.get = (req, res, next) => {
 		});
 };
 
+exports.getBySlug = (req, res, next) => {
+	Veiculo
+        .findOne({
+            slug: req.params.slug,
+            active: true }, 'title description slug tags')
+        .then(data => {
+			res.status(200)
+				.send(data);
+        }).catch(e => {
+			res.status(400)
+				.send(e);
+        });
+};
+
 exports.getById = (req, res, next) => {
 	Veiculo
 		.findById(req.params.id)
@@ -28,7 +42,7 @@ exports.getById = (req, res, next) => {
 		.catch(e => {
 			res.status(400)
 				.send(e);
-		})
+		});
 };
 
 exports.post = (req, res, next) => {
@@ -48,7 +62,7 @@ exports.post = (req, res, next) => {
 					message: 'Falha ao cadastrar',
 					data: e
 				});
-		})
+		});
 };
 
 exports.put = (req, res, next) => {
@@ -64,4 +78,4 @@ exports.put = (req, res, next) => {
 exports.delete = (req, res, next) => {
 	res.status(200)
 		.send(req.body);
-}
+};

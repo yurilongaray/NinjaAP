@@ -11,13 +11,13 @@ const app 	 = express();
 const router = express.Router();
 
 //Conecta com BD (MongoDB)
-mongoose.connect('', { useNewUrlParser: true })
+mongoose.connect('mongodb://yurilongaray:a123456@ds159641.mlab.com:59641/ninjaapi', { useNewUrlParser: true })
 
 //Carrega Models
-const Veiculo = require('.models/veiculo');
+const Veiculo = require('./models/veiculo');
 
 //Carrega Rotas
-const veiculoRoute = require('.models/veiculo-route');
+const veiculoRoute  = require('./routes/veiculo-router');
 
 //Tornando o bodyParser em um middleware entre as requisições para transformar em JSON
 app.use(bodyParser.json());
@@ -26,5 +26,5 @@ app.use(bodyParser.urlencoded({ extended:false }));
 //Chamada das Funções
 app.use('/veiculos', veiculoRoute);
 
-//Exportação do app
+//Exporta o app
 module.exports = app;

@@ -4,9 +4,12 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const schema = new Schema({
+
 	id: {
-		type: Number,
-		required: true
+		index: true,
+		type: String,
+		required: true,
+		unique: [true, 'Id already exists'],
 	},
 	name: {
 		type: String,
@@ -29,15 +32,3 @@ const schema = new Schema({
 });
 
 module.exports = mongoose.model('Veiculo', schema);
-
-/*
-
-    slug: {
-        type: String,
-        required: [true, 'O slug é obrigatório'],
-        trim: true,
-        index: true,
-        unique: true
-    },
-
-*/

@@ -41,13 +41,13 @@ exports.post = (req, res, next) => {
 		.then(x => {
 			res.status(201)
 				.send({
-					message: 'Veiculo cadastrado com sucesso'
+					message: 'Vehicle successfully registered!'
 				})
 		})
 		.catch(e => {
 			res.status(400)
 				.send({
-					message: 'Falha ao cadastrar',
+					message: 'Registered failed!',
 					data: e
 				});
 		});
@@ -68,13 +68,13 @@ exports.put = (req, res, next) => {
 		.then(x => {
 			res.status(201)
 				.send({
-					message: 'Veiculo atualizado com sucesso'
+					message: 'Vehicle updated!'
 				})
 		})
 		.catch(e => {
 			res.status(400)
 				.send({
-					message: 'Falha ao atualizar',
+					message: 'Fail on update!',
 					data: e
 				})
 		})
@@ -88,13 +88,13 @@ exports.delete = (req, res, next) => {
 		.then(x => {
 			res.status(400)
 			.send({
-				message: 'Excluído com sucesso!'
+				message: 'Vehicle successfully deleted!'
 			});
 		})
 		.catch(e => {
 			res.status(400)
 				.send({
-					message: 'Falha ao excluir',
+					message: 'Fail on delete!',
 					data: e
 				});
 		});

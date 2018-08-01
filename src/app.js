@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
 
 //Chamada das Funções
-app.use('/veiculos', veiculoRoute);
+app.use('/vehicles', veiculoRoute);
 
 //Exporta o app
 module.exports = app;

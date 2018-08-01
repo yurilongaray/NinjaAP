@@ -20,7 +20,7 @@ exports.get = (req, res, next) => {
 };
 
 exports.getById = (req, res, next) => {
-	Veiculo
+	return Veiculo
         .findOne({
 			id: req.params.id
 		})
@@ -32,36 +32,6 @@ exports.getById = (req, res, next) => {
 				.send(e);
         });
 };
-
-/* Busca todos com o mesmo Id
-exports.getAllById = (req, res, next) => {
-	Veiculo
-        .find({
-			id: req.params.id
-		})
-        .then(data => {
-			res.status(200)
-				.send(data);
-        }).catch(e => {
-			res.status(400)
-				.send(e);
-        });
-};
-*/
-/* Busca pelo Id auto incremental do MongoDB
-exports.getById = (req, res, next) => {
-	Veiculo
-		.findById(req.params.id)
-		.then(data => {
-			res.status(200)
-				.send(data);
-		})
-		.catch(e => {
-			res.status(400)
-				.send(e);
-		});
-};
-*/
 
 exports.post = (req, res, next) => {
 	const veiculo = new Veiculo(req.body);
@@ -84,16 +54,17 @@ exports.post = (req, res, next) => {
 };
 
 exports.put = (req, res, next) => {
-	Veiculo
-		.findByIdAndUpdate(req.params.id, {
-			$set: {
-				id_car: req.body.id,
-				name: req.body.name,
-				brand_id: req.body.brand_id,
-				model_id: req.body.model_id,
-				license_plate: req.body.license_plate
-			}
-		})
+	const newvalues = {
+		  $set: {
+			name: req.body.name,
+			brand_id: req.body.brand_id,
+			model_id: req.body.model_id,
+			license_plate: req.body.license_plate
+		}
+	};
+
+	return Veiculo
+		.updateOne({ id: req.params.id }, newvalues)
 		.then(x => {
 			res.status(201)
 				.send({
@@ -111,7 +82,9 @@ exports.put = (req, res, next) => {
 
 exports.delete = (req, res, next) => {
 	Veiculo
-		.findOneAndRemove(req.params.id)
+		.deleteOne({
+			id: req.params.id
+		})
 		.then(x => {
 			res.status(400)
 			.send({
@@ -126,19 +99,3 @@ exports.delete = (req, res, next) => {
 				});
 		});
 };
-
-/*
-exports.getBySlug = (req, res, next) => {
-	Veiculo
-        .findOne({
-            slug: req.params.slug,
-            active: true }, 'title description slug tags')
-        .then(data => {
-			res.status(200)
-				.send(data);
-        }).catch(e => {
-			res.status(400)
-				.send(e);
-        });
-};
-*/

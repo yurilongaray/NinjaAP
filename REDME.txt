@@ -1,4 +1,5 @@
 https://mlab.com/home
+https://www.w3schools.com/nodejs/nodejs_mongodb_delete.asp
 
 
 - Possibilitar:

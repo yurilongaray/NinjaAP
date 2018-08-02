@@ -26,9 +26,9 @@ Objeto do veículo
 Sua API deve estar preparada para receber um objeto JSON com as seguintes propriedades:
 
 {
-  name: "Carrinho do Marco Véio",
-  brand_id: "1",
-  model_id: "1",
-  license_plate: "ABC-1234",
-  id: "1"
+	"name": "Carrinho do Marco Véio",
+	"brand_id": "1",
+	"model_id": "1",
+	"license_plate": "ABC-1234",
+	"id": "1"
 }

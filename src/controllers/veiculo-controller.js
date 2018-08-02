@@ -45,11 +45,19 @@ exports.post = (req, res, next) => {
 				})
 		})
 		.catch(e => {
-			res.status(400)
+			if(e.code === 11000 && e.name === 'MongoError') {
+				res.status(400)
 				.send({
-					message: 'Registered failed!',
-					data: e
+					message: 'License plate already exists!',
+					details: e.message
 				});
+			} else {
+				res.status(400)
+					.send({
+						message: 'Registered failed!',
+						details: e.message
+					});
+			}
 		});
 };
 

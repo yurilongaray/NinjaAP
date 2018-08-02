@@ -48,14 +48,14 @@ exports.post = (req, res, next) => {
 			if(e.code === 11000 && e.name === 'MongoError') {
 				res.status(400)
 				.send({
-					message: 'License plate already exists!',
-					details: e.message
+					message: 'License plate already exists!'
+					//details: e.message
 				});
 			} else {
 				res.status(400)
 					.send({
-						message: 'Registered failed!',
-						details: e.message
+						message: 'Registered failed!'
+						//details: e.message
 					});
 			}
 		});
@@ -82,8 +82,8 @@ exports.put = (req, res, next) => {
 		.catch(e => {
 			res.status(400)
 				.send({
-					message: 'Fail on update!',
-					data: e
+					message: 'Fail on update!'
+					//details: e
 				})
 		})
 };
@@ -102,8 +102,8 @@ exports.delete = (req, res, next) => {
 		.catch(e => {
 			res.status(400)
 				.send({
-					message: 'Fail on delete!',
-					data: e
+					message: 'Fail on delete!'
+					//details: e
 				});
 		});
 };

@@ -5,15 +5,19 @@
 const express 	 = require('express');
 const bodyParser = require('body-parser');
 const mongoose 	 = require('mongoose');
+const cors = require('cors');
 
 //Define app por meio do express
 const app 	 = express();
 const router = express.Router();
 
-const cors = require('cors');
-
-//Usado antes de todas as definições de rota
-app.use(cors({origin: 'http://127.0.0.1:8080'}));
+//Usado antes de todas as definiçõe de rotas (CORS)
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
+app.use(cors({origin: 'http://localhost:8080'}));
 
 //Conecta com BD (MongoDB)
 mongoose.connect('mongodb://yurilongaray:a123456@ds159641.mlab.com:59641/ninjaapi', { useNewUrlParser: true })

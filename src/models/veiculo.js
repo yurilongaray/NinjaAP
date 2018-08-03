@@ -1,7 +1,7 @@
 'use strict'
 
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose 		= require('mongoose');
+const Schema   		= mongoose.Schema;
 const autoIncrement = require('mongoose-sequence')(mongoose);
 
 const schema = new Schema({

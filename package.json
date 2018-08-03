@@ -11,6 +11,7 @@
     "express": "^4.16.3",
     "http": "0.0.0",
     "mongoose": "^5.2.6",
+    "mongoose-auto-increment": "^5.0.1",
     "mongoose-sequence": "^4.0.1"
   },
   "scripts": {

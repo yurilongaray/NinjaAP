@@ -1,34 +1,16 @@
-https://mlab.com/home
-https://www.w3schools.com/nodejs/nodejs_mongodb_delete.asp
+Banco de dados: https://mlab.com/home
+Para execução: basta instalar os packages (npm install) e então executar (npm start = node ./bin/server.js)
+Servidor operante na porta 8000 (bin/server.js)
 
-
-- Possibilitar:
-	criação
-	edição
-	exclusão
-	obtenção de dados listagem ok
-	obtenção de dados individual
-
-- Utilizar os métodos HTTP corretos para comunicação entre front-end e API de acordo com o padrão REST;
-
+Características da API:
+- Possibilita criação, edição, exclusão, obtenção de dados em formato de listagem e individual.
+- Utiliza os métodos HTTP corretos para comunicação entre front-end e API de acordo com o padrão REST;
 - Validar a integridade e obrigatoriedade dos campos informados no cadastro, bem como não permitir a inserção de dois veículos com mesma placa.
 
-- Alterar tudo para inglês
-
-Configurando o ambiente
-Para executar corretamente a aplicação front-end, você deve:
-
-Executar os comandos bower install (para instalar as dependências) e http-server (para inicializar o projeto Angular) dentro da pasta public do repositório;
-
-Abrir o arquivo public/index.html e editar o valor da variável API_URL para o endereço da sua API.
-
-Objeto do veículo
-Sua API deve estar preparada para receber um objeto JSON com as seguintes propriedades:
-
+Formato do cadastro presente:
 {
 	"name": "Carrinho do Marco Véio",
 	"brand_id": "1",
 	"model_id": "1",
-	"license_plate": "ABC-1234",
-	"id": "1"
+	"license_plate": "ABC-1234"
 }

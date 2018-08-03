@@ -10,6 +10,11 @@ const mongoose 	 = require('mongoose');
 const app 	 = express();
 const router = express.Router();
 
+var cors = require('cors');
+
+//Usado antes de todas as definições de rota
+app.use(cors({origin: 'http://127.0.0.1:8080'}));
+
 //Conecta com BD (MongoDB)
 mongoose.connect('mongodb://yurilongaray:a123456@ds159641.mlab.com:59641/ninjaapi', { useNewUrlParser: true })
 

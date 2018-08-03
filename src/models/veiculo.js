@@ -4,12 +4,11 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const schema = new Schema({
-
 	id: {
 		index: true,
 		type: String,
 		required: true,
-		unique: [true, 'Id already exists'],
+		unique: true
 	},
 	name: {
 		type: String,
@@ -27,7 +26,7 @@ const schema = new Schema({
 		type: String,
 		required: true,
 		index: true,
-		unique: [true, 'License Plate already exists']
+		unique: true
 	}
 });
 

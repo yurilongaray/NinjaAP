@@ -19,6 +19,7 @@ exports.get = (req, res, next) => {
 		});
 };
 
+//Busca por id
 exports.getById = (req, res, next) => {
 	return Veiculo
         .findOne({
@@ -27,12 +28,14 @@ exports.getById = (req, res, next) => {
         .then(data => {
 			res.status(200)
 				.send(data);
-        }).catch(e => {
+		})
+		.catch(e => {
 			res.status(400)
 				.send(e);
         });
 };
 
+//Cria o veiculo
 exports.post = (req, res, next) => {
 	const veiculo = new Veiculo(req.body);
 
@@ -61,6 +64,7 @@ exports.post = (req, res, next) => {
 		});
 };
 
+//Atualiza o veiculo
 exports.put = (req, res, next) => {
 	const newvalues = {
 		  $set: {
@@ -72,7 +76,7 @@ exports.put = (req, res, next) => {
 	};
 
 	return Veiculo
-		.updateOne({ id: req.params.id }, newvalues)
+		.updateOne({id: req.params.id}, newvalues)
 		.then(x => {
 			res.status(201)
 				.send({
@@ -88,6 +92,7 @@ exports.put = (req, res, next) => {
 		})
 };
 
+//Deleta o veiculo
 exports.delete = (req, res, next) => {
 	Veiculo
 		.deleteOne({

@@ -57,7 +57,7 @@ exports.post = (req, res, next) => {
 			} else {
 				res.status(400)
 					.send({
-						message: 'Registered failed!'
+						message: 'Register failed!'
 						//details: e.message
 					});
 			}

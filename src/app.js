@@ -10,7 +10,7 @@ const mongoose 	 = require('mongoose');
 const app 	 = express();
 const router = express.Router();
 
-var cors = require('cors');
+const cors = require('cors');
 
 //Usado antes de todas as definições de rota
 app.use(cors({origin: 'http://127.0.0.1:8080'}));
